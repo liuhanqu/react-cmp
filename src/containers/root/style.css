@@ -1,0 +1,14 @@
+.demo-slider {
+  & > div {
+    display: flex;
+
+    &:not(:first-of-type) {
+      margin-top: 5vh;
+    }
+  }
+
+  & .slider {
+    margin-right: 1em;
+    width: 4rem;
+  }
+}

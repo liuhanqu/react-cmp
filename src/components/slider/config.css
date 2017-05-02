@@ -1,0 +1,16 @@
+:root {
+  --slider-knob-size: calc(3.2 * var(--unit));
+  --slider-inner-knob-size: calc(1.2 * var(--unit));
+  --slider-pin-size: calc(2.6 * var(--unit));
+  --slider-snap-size: calc(0.2 * var(--unit));
+  --slider-bar-size: calc(0.2 * var(--unit));
+  --slider-pin-elevation: calc(1.7 * var(--unit));
+
+
+  --slider-snap-color: #000;
+  --slider-inner-knob-color: #000;
+  --slider-bar-color: #eee;
+  --slider-value-color: #3f5185;
+  --slider-disabled-color: #b1b1b1;
+}
+

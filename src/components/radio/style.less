@@ -1,0 +1,41 @@
+.radio-button {
+  display: flex;
+  .input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+  .radio {
+    width: .5rem;
+    height: .5rem;
+    background: #fff;
+    border-radius: 50%;
+    margin-right: 1em;
+    border: 2px solid #000;
+    position: relative;
+  }
+  &.checked {
+    .radio {
+      border-color: #1f84b7;
+      &::after {
+        content: '';
+        height: .3rem;
+        width: .3rem;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background: #1f84b7;
+      }
+    }
+  }
+  &.disabled {
+    color: #ccc;
+    .radio {
+      border-color: #ccc;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.tabs {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	> .navigation {
+		display: flex;
+		flex-direction: row;
+		> .label {
+			cursor: pointer;
+			padding: .4em;
+			position: relative;
+			border-bottom: 2px solid transparent;
+			&.active {
+				border-bottom-color: #ff8533;
+			}
+			&.hidden {
+				display: none;
+			}
+			&.disabled {
+				opacity: .2;
+				cursor: default;
+			}
+			&:hover {
+				background: #eee;
+			}
+		}
+	}
+	> .content {
+		display: flex;
+		flex-direction: column;
+		&.active {
+			display: block;
+		}
+	}
+}
