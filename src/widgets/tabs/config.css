@@ -1,0 +1,7 @@
+:root {
+  --tabs-label-color: var(--color-text);
+  --tabs-label-hover-color: var(--color-text-secondary);
+  --tabs-label-active-color: #00a0e9;
+  --tabs-label-disabled-opacity: 0.2;
+  --tabs-pointer-color: #00a0e9;
+}

@@ -5,7 +5,7 @@ const webpack = require('webpack');
 // const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const alias = {};
-['components', 'containers', 'styles', 'utils'].forEach((el) => {
+['components', 'containers', 'styles', 'utils', 'widgets'].forEach((el) => {
   alias[el] = path.resolve(__dirname, '../src', el);
 });
 
@@ -31,16 +31,16 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.css', '.json'],
+    extensions: ['.js', '.jsx', '.css', '.json'],
     modules: ['node_modules'],
     alias,
   },
 
   module: {
     rules: [{
-      test: /\.js$/,
+      test: /\.jsx?$/,
       loader: 'babel-loader',
-      include: path.resolve(__dirname, '../src'),
+      // include: path.resolve(__dirname, '../src'),
       options: {
         cacheDirectory: true,
         babelrc: false,

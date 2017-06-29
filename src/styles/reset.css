@@ -79,6 +79,11 @@ textarea {
   -webkit-appearance: none;
 }
 
+button,
+input {
+  border: 0;
+}
+
 *,
 ::after,
 ::before {

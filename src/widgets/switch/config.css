@@ -1,0 +1,21 @@
+:root {
+  --switch-disabled-text-color: rgba(0, 0, 0, 0.26);
+  --switch-disabled-track-color
+  --switch-disabled-thumb-color
+
+  --switch-track-on-color
+  --switch-track-off-color: rgba(0, 0, 0, 0.26);
+  --switch-track-length: calc(3.6 * var(--unit));
+  --switch-track-height: calc(1.4 * var(--unit));
+  --switch-track-border-width
+  --switch-track-border-color
+
+  --switch-thumb-on-color
+  --switch-thumb-off-color
+  --switch-thumb-size: calc(2 * var(--unit));
+
+  --switch-color
+  --switch-text-color: #000;
+
+  --switch-font-size: var(--font-size-small);
+}

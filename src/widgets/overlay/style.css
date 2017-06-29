@@ -1,0 +1,19 @@
+@import 'styles/variable.css';
+@import './config.css';
+
+[data-cmp='overlay'] {
+  background-color: var(--overlay-color);
+  height: 100vh;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transition: opacity var(--animation-duration) var(--animation-curve-default);
+  width: 100vw;
+
+  &.active {
+    opacity: var(--overlay-opacity);
+    pointer-events: all;
+  }
+}

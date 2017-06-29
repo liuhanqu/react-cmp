@@ -1,0 +1,128 @@
+@import '../../styles/variables.css';
+@import './config.css';
+
+[data-cmp='slider'] {
+  & .container {
+    height: var(--slider-knob-size);
+    margin-right: var(--slider-knob-size);
+    position: relative;
+    user-select: none;
+    width: calc(100% - var(--slider-knob-size));
+  }
+
+  & .knob {
+    background-color: transparent;
+    height: var(--slider-knob-size);
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: var(--slider-knob-size);
+  }
+
+  & .inner-knob {
+    background-color: var(--slider-inner-knob-color);
+    border-radius: 50%;
+    bottom: 0;
+    height: var(--slider-inner-knob-size);
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: var(--slider-inner-knob-size);
+  }
+
+  & .snaps {
+    display: flex;
+    height: var(--slider-snap-size);
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: calc(var(--slider-knob-size) / 2 - var(--slider-snap-size) / 2);
+    width: calc(100% + var(--slider-snap-size));
+
+    &::after {
+      background-color: var(--slider-snap-color);
+      border-radius: 50%;
+      content: '';
+      display: block;
+      height: var(--slider-snap-size);
+      width: var(--slider-snap-size);
+    }
+  }
+
+  & .snap {
+    /* flex-grow: 1; flex-shrink: 1; flex-basis: auto; */
+    flex: 1;
+
+    &::after {
+      background-color: var(--slider-snap-color);
+      border-radius: 50%;
+      content: '';
+      display: block;
+      height: var(--slider-snap-size);
+      width: var(--slider-snap-size);
+    }
+  }
+
+  & .progress {
+    height: 100%;
+    left: calc(var(--slider-knob-size) / 2);
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    & .progress-bar {
+      background-color: var(--slider-bar-color);
+      height: var(--slider-bar-size);
+      position: absolute;
+      top: calc(var(--slider-knob-size) / 2 - var(--slider-bar-size) / 2);
+      width: 100%;
+
+      & .value {
+        background-color: var(--slider-value-color);
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform-origin: left center;
+      }
+    }
+  }
+
+  & .tooltip {
+    height: var(--slider-pin-size);
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translate(calc(var(--slider-knob-size) - var(--slider-pin-size)), calc(-1 * var(--slider-pin-elevation)));
+    visibility: hidden;
+    width: var(--slider-pin-size);
+  }
+
+  &.disabled {
+    cursor: auto;
+    pointer-events: none;
+
+    & .inner-knob {
+      background-color: var(--slider-disabled-color);
+    }
+  }
+
+  &.pressed {
+    &.pinned {
+      & .tooltip {
+        visibility: visible;
+      }
+    }
+
+    &:not(.pinned) {
+      & .inner-knob {
+        height: 100%;
+        transform: translateZ(0);
+        width: 100%;
+      }
+    }
+  }
+}

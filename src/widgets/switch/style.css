@@ -1,0 +1,72 @@
+[data-cmp='switch'] {
+  display: flex;
+
+  & .text {
+    color: var(--switch-text-color);
+    white-space: nowrap;
+    padding-left: var(--unit);
+  }
+
+  & .thumb {
+    border-radius: 50%;
+    cursor: pointer;
+    height: var(--switch-thumb-size);
+    width: var(--switch-thumb-size);
+    position: absolute;
+    transition-duration: 0.28s;
+    transition-property: left;
+    transition-timing-function: var(--animation-curve-default);
+  }
+
+  & .on,
+  & .off {
+    border-radius: var(--switch-track-height);
+    cursor: pointer;
+    height: var(--switch-track-height);
+    width: var(--switch-track-length);
+    position: relative;
+  }
+
+  & .on {
+    background-color: var(--switch-track-on-color);
+
+    & .thumb {
+      background: var(--switch-thumb-on-color);
+      left: calc(var(--switch-track-length) - var(--switch-thumb-size));
+    }
+  }
+
+  & .off {
+    background: var(--switch-track-off-color);
+
+    & .thumb {
+      background: var(--switch-thumb-off-color);
+      left: 0;
+    }
+  }
+
+  &.input {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    width: 0;
+  }
+
+  &.disabled {
+    & .text {
+      color: var(--switch-disabled-text-color);
+    }
+
+    & .on,
+    & .off {
+      background: var(--switch-disabled-track-color);
+      cursor: auto;
+    }
+
+    & .thumb {
+      background-color: var(--switch-disabled-thumb-color);
+      border-color: transparent;
+      cursor: auto;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+[data-cmp='btn'] {
+  &.disabled {
+    cursor: auto;
+    pointer-events: none;
+  }
+}

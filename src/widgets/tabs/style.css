@@ -1,0 +1,54 @@
+@import '../../styles/variables.css';
+@import './config.css';
+
+.tabs {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  & .navigation {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    & .label {
+      cursor: pointer;
+      padding: 0.4em;
+      position: relative;
+      color: var(--tabs-label-color);
+
+      &.hidden {
+        display: none;
+      }
+
+      &.disabled {
+        opacity: var(--tabs-label-disabled-opacity);
+        cursor: default;
+      }
+
+      &:not(.active):hover {
+        color: var(--tabs-label-hover-color);
+      }
+
+      &.active {
+        color: var(--tabs-label-active-color);
+      }
+    }
+
+    & .pointer {
+      position: absolute;
+      height: 2px;
+      bottom: 0;
+      background-color: var(--tabs-pointer-color);
+    }
+  }
+
+  & .content {
+    display: flex;
+    flex-direction: column;
+
+    &.active {
+      display: block;
+    }
+  }
+}
